@@ -4,7 +4,7 @@
   "description": "Pluralsight course about how to use webpack",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error no test specified.\" && exit 1"
+    "start": "webpack-dev-server"
   },
   "keywords": [
     "webpack"
@@ -22,6 +22,7 @@
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-react": "^7.4.0",
     "node-libs-browser": "^2.0.0",
+    "strip-loader": "^0.1.2",
     "webpack": "^3.8.1"
   }
 }
