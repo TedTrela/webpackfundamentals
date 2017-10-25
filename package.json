@@ -6,9 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server"
   },
-  "keywords": [
-    "webpack"
-  ],
+  "keywords": ["webpack"],
   "author": "Ted",
   "license": "ISC",
   "devDependencies": {

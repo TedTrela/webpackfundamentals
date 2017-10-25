@@ -4,6 +4,8 @@
     "linebreak-style": 0,
     "import/no-unresolved": 1,
     "import/extensions": 1,
-    "no-undef": 1
+    "no-undef": 1,
+    "no-multiple-empty-lines": 1,
+    "no-empty": 1
   }
 }
