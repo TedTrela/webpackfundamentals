@@ -1,6 +1,6 @@
 const login = (username, password) => {
   if (username !== 'admin' || password !== 'radical') {
-    console.log('incorrect login');
+    console.log('incorrect login'); // eslint-disable-line no-console
   }
 };
 

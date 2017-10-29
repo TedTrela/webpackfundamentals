@@ -1,1 +1,1 @@
-console.log('logging from utils.js...');
+console.log('logging from utils.js...'); // eslint-disable-line no-console
