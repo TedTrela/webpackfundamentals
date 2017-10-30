@@ -4,5 +4,9 @@ h1 {
     color: red;
     style: solid;
     width: 1px;
+    radius: 5px;
   }
+  background: linear-gradient(to top, green, white);
+  display: flex;
+  transition: transform 10s;
 }
