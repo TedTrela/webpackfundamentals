@@ -2,6 +2,8 @@ var path = require('path');
 var webpack = require('webpack');
 var commonsPlugin = new webpack.optimize.CommonsChunkPlugin('shared');
 
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+
 module.exports = {
   context: path.resolve('js'),
   entry: {
@@ -10,14 +12,14 @@ module.exports = {
     contact: './contact_page.js'
   },
   output: {
-    path: path.resolve('build/js/'),
-    publicPath: '/public/assets/js/',
+    path: path.resolve('build/'),
+    publicPath: '/public/assets/',
     filename: '[name].js'
   },
   devServer: {
     contentBase: 'public'
   },
-  plugins: [commonsPlugin],
+  plugins: [commonsPlugin, new ExtractTextPlugin('styles.css')],
   module: {
     rules: [
       {
@@ -34,17 +36,26 @@ module.exports = {
       {
         test: /\.css$/,
         exclude: /node_modules/,
-        loader: 'style-loader!css-loader'
+        loader: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: 'css-loader'
+        })
       },
       {
         test: /\.less$/,
         exclude: /node_modules/,
-        loader: 'style-loader!css-loader!less-loader'
+        loader: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: ['css-loader', 'less-loader']
+        })
       },
       {
         test: /\.scss$/,
         exclude: /node_modules/,
-        loader: 'style-loader!css-loader!sass-loader'
+        loader: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: ['css-loader', 'sass-loader']
+        })
       }
     ]
   },
