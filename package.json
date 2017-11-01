@@ -8,12 +8,12 @@
   },
   "main": "app.js",
   "scripts": {
-    "start": "webpack-dev-server --open",
+    "start": "npm-run-all setDevEnv devServer",
+    "setDevEnv": "npm run-script env NODE_ENV=development",
+    "devServer": "webpack-dev-server -d --open",
     "lint": "eslint"
   },
-  "keywords": [
-    "webpack"
-  ],
+  "keywords": ["webpack"],
   "author": "Ted",
   "license": "ISC",
   "devDependencies": {
